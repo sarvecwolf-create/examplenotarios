@@ -1,0 +1,330 @@
+/* 1. Mantenemos tus variables (ajusté el azul al original del archivo que subiste) */
+:root {
+    --azul-oscuro: #0f2c52;
+    --dorado: #ffbc13;
+    --gris-claro: #f4f4f4;
+    --blanco: #ffffff;
+    --texto: #333333;
+    --transition: 0.3s ease;
+}
+
+/* 2. Reset y Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    font-size: 16px; /* Base font size */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- TUS SECCIONES ACTUALES --- */
+
+.top-bar {
+    background: var(--azul-oscuro);
+    color: white;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.top-bar span {
+    margin-left: 15px;
+}
+
+header {
+    background: var(--blanco);
+    padding: 15px 0;
+    border-bottom: 3px solid var(--dorado);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--azul-oscuro);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: var(--transition);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--dorado);
+}
+
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../assets/img/balanza.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+}
+
+/* --- NUEVAS SECCIONES --- */
+
+/* Títulos con línea dorada */
+.section-title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.section-title h2 {
+    color: var(--azul-oscuro);
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--dorado);
+}
+
+/* Grid de servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    padding: 20px;
+    background: var(--gris-claro);
+    border-top: 5px solid var(--azul-oscuro);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    background: var(--blanco);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--azul-oscuro);
+    padding: 10px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background: var(--azul-oscuro);
+    color: var(--dorado);
+}
+
+/*--- SECCION DE FOOTER ---*/
+.main-footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 50px 0 0 0;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-col h3 {
+    color: var(--dorado);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.footer-col p {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #cbd5e0;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.8rem;
+}
+
+.footer-col ul li a:hover {
+    color: var(--dorado);
+    padding-left: 5px;
+}
+
+/* Barra inferior de Copyright */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Media Queries for Enhanced Responsiveness */
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+    .top-bar {
+        text-align: center;
+    }
+
+    .top-bar span {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        text-align: center;
+		margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 10px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
